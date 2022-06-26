@@ -8,17 +8,17 @@ public class Login extends TestBase {
 
     @BeforeMethod
     public void preconditions() {
-    if (isLogged()) {
-    logOut();
+    if (app.getUser().isLogged()) {
+    app.getUser().logOut();
 
 }
     }
     @Test
     public void loginPositive() throws InterruptedException {
-        initLogin();
+        app.getUser().initLogin();
         //Thread.sleep(10);
-        fillLoginform("juliakliot.jk@gmail.com", "misha240613");
-        submitLogin();
+        app.getUser().fillLoginform("juliakliot.jk@gmail.com", "misha240613");
+        app.getUser().submitLogin();
 
     }
 

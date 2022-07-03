@@ -2,6 +2,8 @@ package manage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperBase {
     WebDriver wd;
@@ -22,6 +24,13 @@ public class HelperBase {
             click(locator);
             wd.findElement(locator).clear();
             wd.findElement(locator).sendKeys(text);
+        }
+    }
+    public void pause(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
